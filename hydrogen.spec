@@ -16,6 +16,7 @@ URL:		http://www.hydrogen-music.org
 Source:		http://prdownloads.sourceforge.net/hydrogen/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.9.3-g++4.patch
 Patch1:		%{name}-0.9.3-build-flac.patch
+Patch2:		%{name}-0.9.3-lib64.patch
 BuildRoot:	%_tmppath/%{name}-buildroot
 BuildRequires:	png-devel jpeg-devel libqt-devel pkgconfig
 BuildRequires:	libalsa-devel jackit-devel libaudiofile-devel libsndfile-devel
@@ -29,6 +30,7 @@ professional yet simple and intuitive pattern-based drum programming.
 %setup -q
 %patch0 -p0 -b .g++4
 %patch1 -p0 -b .buildflac
+%patch2 -p0 -b .lib64
 
 %build
 QTDIR=%{_prefix}/lib/qt3
@@ -85,9 +87,7 @@ EOF
 %doc AUTHORS ChangeLog README
 %{_bindir}/*
 %{_datadir}/applications/%name.desktop
-%dir /usr/lib/%name
-%dir /usr/lib/%name/plugins
-/usr/lib/%name/plugins/*
+%{_libdir}/%name
 %{_menudir}/%name
 %{_datadir}/%name
 %{_liconsdir}/%name.png
