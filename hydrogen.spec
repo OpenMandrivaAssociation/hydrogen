@@ -21,6 +21,7 @@ BuildRoot:	%_tmppath/%{name}-buildroot
 BuildRequires:	png-devel jpeg-devel libqt-devel pkgconfig
 BuildRequires:	libalsa-devel jackit-devel libaudiofile-devel libsndfile-devel
 BuildRequires:  libflac-devel libflac++-devel
+BuildRequires:	sed desktop-file-utils
 
 %description
 Hydrogen is an advanced drum machine for GNU/Linux. It's main goal is to bring
@@ -58,6 +59,15 @@ section="%section" \
 title="%title" \
 longtitle="%Summary"
 EOF
+
+desktop-file-install --vendor="" \
+  --remove-category="Application" \
+  --remove-category="Sound" \
+  --add-category="X-MandrivaLinux-Multimedia-Sound" \
+  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
+
+sed -e 's/\/usr\/share\/%{name}\/data\/img\/gray\/icon64.png/%{name}/' %buildroot%{_datadir}/applications/%{name}.desktop > %buildroot%{_datadir}/applications/%{name}.new && \
+mv -f %buildroot%{_datadir}/applications/%{name}.new %buildroot%{_datadir}/applications/%{name}.desktop
 
 #icons
 %__mkdir_p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir}
