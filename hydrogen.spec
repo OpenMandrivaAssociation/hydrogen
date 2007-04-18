@@ -48,18 +48,6 @@ make
 %__rm -rf %buildroot
 %makeinstall
 
-#menu
-%__mkdir_p %buildroot%_menudir
-cat > %buildroot%_menudir/%name << EOF
-?package(%name): \
-command="%_bindir/%name" \
-needs="x11" \
-icon="%name.png" \
-section="%section" \
-title="%title" \
-longtitle="%Summary"
-EOF
-
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="Sound" \
