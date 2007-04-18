@@ -85,7 +85,9 @@ EOF
 %doc AUTHORS ChangeLog README
 %{_bindir}/*
 %{_datadir}/applications/%name.desktop
-%{_libdir}/%name
+%dir /usr/lib/%name
+%dir /usr/lib/%name/plugins
+/usr/lib/%name/plugins/*
 %{_menudir}/%name
 %{_datadir}/%name
 %{_liconsdir}/%name.png
