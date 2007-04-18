@@ -60,8 +60,8 @@ mv -f %buildroot%{_datadir}/applications/%{name}.new %buildroot%{_datadir}/appli
 #icons
 %__mkdir_p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir}
 %__mkdir_p %buildroot%{_iconsdir}/hicolor
-%__mkdir_p %buildroot%{_iconsdir}/hicolor/{48x48,32x32,24x24,22x22,16x16}
-%__mkdir_p %buildroot%{_iconsdir}/hicolor/{48x48,32x32,24x24,22x22,16x16}/apps
+%__mkdir_p %buildroot%{_iconsdir}/hicolor/{48x48,32x32,16x16}
+%__mkdir_p %buildroot%{_iconsdir}/hicolor/{48x48,32x32,16x16}/apps
 %__cp data/img/gray/icon48.png %buildroot%_liconsdir/%name.png
 %__cp data/img/gray/icon48.png %buildroot%_iconsdir/hicolor/48x48/apps/%{name}.png
 %__cp data/img/gray/icon32.png %buildroot%_iconsdir/%name.png
@@ -86,7 +86,6 @@ mv -f %buildroot%{_datadir}/applications/%{name}.new %buildroot%{_datadir}/appli
 %{_bindir}/*
 %{_datadir}/applications/%name.desktop
 %{_libdir}/%name
-%{_menudir}/%name
 %{_datadir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
