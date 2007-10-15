@@ -1,6 +1,6 @@
 %define name    hydrogen
 %define version 0.9.3
-%define release %mkrel 3
+%define release %mkrel 4
 
 %define	section	Multimedia/Sound
 %define	title	Hydrogen
@@ -10,7 +10,7 @@ Summary:	%Summary
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
-License:	GPL
+License:	GPLv2+
 Group:		Sound
 URL:		http://www.hydrogen-music.org
 Source:		http://prdownloads.sourceforge.net/hydrogen/%{name}-%{version}.tar.bz2
@@ -21,7 +21,7 @@ BuildRoot:	%_tmppath/%{name}-buildroot
 BuildRequires:	png-devel jpeg-devel libqt-devel pkgconfig
 BuildRequires:	libalsa-devel jackit-devel libaudiofile-devel libsndfile-devel
 BuildRequires:  libflac-devel libflac++-devel
-BuildRequires:	sed desktop-file-utils
+BuildRequires:	desktop-file-utils
 
 %description
 Hydrogen is an advanced drum machine for GNU/Linux. It's main goal is to bring
@@ -48,25 +48,16 @@ make
 %__rm -rf %buildroot
 %makeinstall
 
+perl -pi -e 's,/usr/share/%{name}/data/img/gray/icon64.png,%{name},g' %buildroot%{_datadir}/applications/%{name}.desktop
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="Sound" \
-  --add-category="X-MandrivaLinux-Multimedia-Sound" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
 
-sed -e 's/\/usr\/share\/%{name}\/data\/img\/gray\/icon64.png/%{name}/' %buildroot%{_datadir}/applications/%{name}.desktop > %buildroot%{_datadir}/applications/%{name}.new && \
-mv -f %buildroot%{_datadir}/applications/%{name}.new %buildroot%{_datadir}/applications/%{name}.desktop
-
 #icons
-%__mkdir_p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir}
-%__mkdir_p %buildroot%{_iconsdir}/hicolor
-%__mkdir_p %buildroot%{_iconsdir}/hicolor/{48x48,32x32,16x16}
 %__mkdir_p %buildroot%{_iconsdir}/hicolor/{48x48,32x32,16x16}/apps
-%__cp data/img/gray/icon48.png %buildroot%_liconsdir/%name.png
 %__cp data/img/gray/icon48.png %buildroot%_iconsdir/hicolor/48x48/apps/%{name}.png
-%__cp data/img/gray/icon32.png %buildroot%_iconsdir/%name.png
 %__cp data/img/gray/icon32.png %buildroot%_iconsdir/hicolor/32x32/apps/%{name}.png
-%__cp data/img/gray/icon16.png %buildroot%_miconsdir/%name.png
 %__cp data/img/gray/icon16.png %buildroot%_iconsdir/hicolor/16x16/apps/%{name}.png
 
 %post
@@ -87,9 +78,6 @@ mv -f %buildroot%{_datadir}/applications/%{name}.new %buildroot%{_datadir}/appli
 %{_datadir}/applications/%name.desktop
 %{_libdir}/%name
 %{_datadir}/%name
-%{_liconsdir}/%name.png
-%{_iconsdir}/%name.png
-%{_miconsdir}/%name.png
 %{_iconsdir}/hicolor/48x48/apps/%{name}.png
 %{_iconsdir}/hicolor/32x32/apps/%{name}.png
 %{_iconsdir}/hicolor/16x16/apps/%{name}.png
