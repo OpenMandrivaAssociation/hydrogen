@@ -17,6 +17,7 @@ Source:		http://prdownloads.sourceforge.net/hydrogen/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.9.3-g++4.patch
 Patch1:		%{name}-0.9.3-build-flac.patch
 Patch2:		%{name}-0.9.3-lib64.patch
+BuildRoot:	%_tmppath/%{name}-buildroot
 BuildRequires:	png-devel jpeg-devel libqt-devel pkgconfig
 BuildRequires:	libalsa-devel jackit-devel libaudiofile-devel libsndfile-devel
 BuildRequires:  libflac-devel libflac++-devel
