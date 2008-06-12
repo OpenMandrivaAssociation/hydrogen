@@ -60,13 +60,17 @@ desktop-file-install --vendor="" \
 %__cp data/img/gray/icon32.png %buildroot%_iconsdir/hicolor/32x32/apps/%{name}.png
 %__cp data/img/gray/icon16.png %buildroot%_iconsdir/hicolor/16x16/apps/%{name}.png
 
+%if %mdkversion < 200900
 %post
 %update_menus
 %update_icon_cache hicolor
+%endif
 		
+%if %mdkversion < 200900
 %postun
 %clean_menus
 %clean_icon_cache hicolor
+%endif
 
 %clean
 %__rm -rf %buildroot
