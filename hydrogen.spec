@@ -1,6 +1,6 @@
 %define name    hydrogen
 %define version 0.9.3
-%define release %mkrel 4
+%define release %mkrel 6
 
 %define	section	Multimedia/Sound
 %define	title	Hydrogen
