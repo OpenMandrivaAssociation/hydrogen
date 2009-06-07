@@ -30,6 +30,7 @@ BuildRequires:  libflac-devel
 BuildRequires:  libflac++-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:  liblrdf-devel
+BuildRequires:  scons
 
 %description
 Hydrogen is an advanced drum machine for GNU/Linux. It's main goal is to bring
