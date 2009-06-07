@@ -39,7 +39,7 @@ professional yet simple and intuitive pattern-based drum programming.
 
 %files
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog
 %{_bindir}/*
 %{_datadir}/applications/%name.desktop
 %{_datadir}/%name
