@@ -34,7 +34,7 @@ BuildRequires:  scons
 BuildRequires:  libtar-devel
 
 %description
-Hydrogen is an advanced drum machine for GNU/Linux. It's main goal is to bring
+Hydrogen is an advanced drum machine for GNU/Linux. Its main goal is to bring
 professional yet simple and intuitive pattern-based drum programming.
 
 %files
