@@ -1,34 +1,34 @@
 %define name    hydrogen
-%define version 0.9.4
-%define release %mkrel 0.rc1.1
+%define version 0.9.5
+%define release %mkrel 1
 
-%define	section	Multimedia/Sound
-%define	title	Hydrogen
-%define	Summary	Hydrogen Drum Machine
+%define section Multimedia/Sound
+%define title   Hydrogen
+%define Summary Hydrogen Drum Machine
 
-Summary:	%Summary
+Summary:    %Summary
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
-License:	GPLv2+
-Group:		Sound
-URL:		http://www.hydrogen-music.org
-Source:		http://prdownloads.sourceforge.net/%name/%name-%version-rc1-1.tar.gz
-Patch0:		%{name}-0.9.3-g++4.patch
-Patch1:		%{name}-0.9.3-build-flac.patch
-Patch2:		%{name}-0.9.3-lib64.patch
-BuildRoot:	%_tmppath/%{name}-buildroot
-BuildRequires:	png-devel 
-BuildRequires:  jpeg-devel 
-BuildRequires:  qt4-devel 
+License:    GPLv2+
+Group:      Sound
+URL:        http://www.hydrogen-music.org
+Source:     http://prdownloads.sourceforge.net/%name/%name-%version.tar.gz
+Patch0:     %{name}-0.9.3-g++4.patch
+Patch1:     %{name}-0.9.3-build-flac.patch
+Patch2:     %{name}-0.9.3-lib64.patch
+BuildRoot:  %_tmppath/%{name}-buildroot
+BuildRequires:  png-devel
+BuildRequires:  jpeg-devel
+BuildRequires:  qt4-devel
 BuildRequires:  pkgconfig
-BuildRequires:	libalsa-devel 
-BuildRequires:  jackit-devel 
-BuildRequires:  libaudiofile-devel 
+BuildRequires:  libalsa-devel
+BuildRequires:  jackit-devel
+BuildRequires:  libaudiofile-devel
 BuildRequires:  libsndfile-devel
-BuildRequires:  libflac-devel 
+BuildRequires:  libflac-devel
 BuildRequires:  libflac++-devel
-BuildRequires:	desktop-file-utils
+BuildRequires:  desktop-file-utils
 BuildRequires:  liblrdf-devel
 BuildRequires:  scons
 BuildRequires:  libtar-devel
@@ -51,7 +51,7 @@ professional yet simple and intuitive pattern-based drum programming.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %name-%version-rc1-1
+%setup -q -n %name-%version
 #%patch0 -p0 -b .g++4
 #%patch1 -p0 -b .buildflac
 #%patch2 -p0 -b .lib64
