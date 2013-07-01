@@ -1,4 +1,4 @@
-Summary:	Hydrogen Drum Machine
+Summary:	Drum Machine
 Name:		hydrogen
 Version:	0.9.5.1
 Release:	1
