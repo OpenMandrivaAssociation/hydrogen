@@ -1,7 +1,7 @@
 Summary:	Drum Machine
 Name:		hydrogen
 Version:	0.9.5.1
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Sound
 URL:		http://www.hydrogen-music.org
