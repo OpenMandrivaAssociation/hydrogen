@@ -1,0 +1,15 @@
+diff -Nurp hydrogen-0.9.5.1/libs/hydrogen/src/object.cpp hydrogen-0.9.5.1.mod/libs/hydrogen/src/object.cpp
+--- hydrogen-0.9.5.1/libs/hydrogen/src/object.cpp	2009-09-20 04:04:23.000000000 +0200
++++ hydrogen-0.9.5.1.mod/libs/hydrogen/src/object.cpp	2013-12-10 07:18:00.506872464 +0100
+@@ -239,9 +239,9 @@ void* loggerThread_func( void* param )
+ 		QString tmpString;
+ 		for( it = last = queue.begin() ; it != queue.end() ; ++it ) {
+ 			last = it;
+-			printf( it->toLocal8Bit() );
++			printf("%s", qPrintable(it->toLocal8Bit()));
+ 			if( pLogFile ) {
+-				fprintf( pLogFile, it->toLocal8Bit() );
++				fprintf( pLogFile, "%s", qPrintable(it->toLocal8Bit()));
+ 				fflush( pLogFile );
+ 			}
+ 		}
