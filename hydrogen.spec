@@ -7,7 +7,7 @@
 
 Name:           hydrogen
 Version:        0.9.6.1
-Release:        1
+Release:        2
 Summary:        An advanced Drum Machine
 License:        GPLv2+
 Group:          Sound
@@ -82,6 +82,7 @@ which use %{name}.
 %setup -q
 
 %build
+export PATH=/usr/lib/qt4/bin:$PATH
 %cmake
 %make
 
