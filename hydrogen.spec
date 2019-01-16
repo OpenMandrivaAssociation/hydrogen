@@ -6,13 +6,13 @@
 %define debug_package	%{nil}
 
 Name:           hydrogen
-Version:        0.9.6.1
-Release:        2
+Version:        1.0.0
+Release:        1
 Summary:        An advanced Drum Machine
 License:        GPLv2+
 Group:          Sound
 URL:            http://www.hydrogen-music.org
-Source0:        https://github.com/%{name}-music/%{name}/archive/%{version}.tar.gz
+Source0:        https://github.com/hydrogen-music/hydrogen/archive/1.0.0-beta1/hydrogen-1.0.0-beta1.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:	desktop-file-utils
@@ -112,9 +112,3 @@ desktop-file-install \
 mkdir -p %{buildroot}%{_appdatadir}		
 appstream-util appdata-from-desktop %{buildroot}%{_datadir}/applications/hydrogen.desktop hydrogen.appdata.xml
 cp hydrogen.appdata.xml %{buildroot}%{_appdatadir}/
-
-
-
-
-
-
