@@ -23,6 +23,7 @@ BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5Xml)
 BuildRequires:	qmake5
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(audiofile)
