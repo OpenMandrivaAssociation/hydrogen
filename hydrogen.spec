@@ -10,7 +10,7 @@ Release:        1
 Summary:        An advanced Drum Machine
 License:        GPLv2+
 Group:          Sound
-URL:            http://www.hydrogen-music.org
+URL:            https://www.hydrogen-music.org
 Source0:        https://github.com/hydrogen-music/hydrogen/archive/%{version}.tar.gz
 
 BuildRequires:  cmake
