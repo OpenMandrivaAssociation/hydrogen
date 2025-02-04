@@ -5,7 +5,7 @@
 %define debug_package	%{nil}
 
 Name:           hydrogen
-Version:        1.2.1
+Version:        1.2.4
 Release:        1
 Summary:        An advanced Drum Machine
 License:        GPLv2+
@@ -21,6 +21,7 @@ BuildRequires:	jpeg-devel
 BuildRequires:	ladspa-devel
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
+BuildRequires:  cmake(Qt5Svg)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Xml)
@@ -52,7 +53,7 @@ professional yet simple and intuitive pattern-based drum programming.
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/
 %{_iconsdir}/*/*/*/*
-%{_appdatadir}/*.appdata.xml
+%{_datadir}/metainfo/org.hydrogenmusic.Hydrogen.metainfo.xml
 %{_mandir}/man1/*.1*
 
 #--------------------------------------------------------------------
