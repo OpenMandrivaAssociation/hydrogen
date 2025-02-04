@@ -5,7 +5,7 @@
 %define debug_package	%{nil}
 
 Name:           hydrogen
-Version:        1.2.1
+Version:        1.2.4
 Release:        1
 Summary:        An advanced Drum Machine
 License:        GPLv2+
