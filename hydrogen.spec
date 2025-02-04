@@ -53,7 +53,7 @@ professional yet simple and intuitive pattern-based drum programming.
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/
 %{_iconsdir}/*/*/*/*
-%{_appdatadir}/*.appdata.xml
+%{_datadir}/metainfo/org.hydrogenmusic.Hydrogen.metainfo.xml
 %{_mandir}/man1/*.1*
 
 #--------------------------------------------------------------------
