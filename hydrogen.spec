@@ -49,6 +49,7 @@ BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(lrdf)
 BuildRequires:	pkgconfig(portaudio-2.0)
 BuildRequires:	pkgconfig(portmidi)
+BuildRequires:	pkgconfig(raptor)
 # ATM rubberband2 support is experimental,
 # but hydrogen can detect the binary and use it properly at runtime
 #BuildRequires:	pkgconfig(rubberband)
