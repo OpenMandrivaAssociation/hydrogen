@@ -1,0 +1,48 @@
+diff -rupN hydrogen-1.2.5.old/CMakeLists.txt hydrogen-1.2.5/CMakeLists.txt
+--- hydrogen-1.2.5.old/CMakeLists.txt	2025-07-17 22:16:40.000000000 +0200
++++ hydrogen-1.2.5/CMakeLists.txt	2025-07-29 16:20:05.681913054 +0200
+@@ -329,7 +329,7 @@ if ("${PC_PORTMIDI_VERSION}" STREQUAL ""
+ endif()
+ 
+ find_helper(PULSEAUDIO libpulse pulse/pulseaudio.h pulse)
+-find_helper(LASH lash-1.0 lash/lash.h lash)
++find_helper(LASH liblash lash-1.0/lash/lash.h lash)
+ find_helper(LRDF lrdf lrdf.h lrdf)
+ 
+ find_helper(RUBBERBAND rubberband rubberband/RubberBandStretcher.h rubberband)
+diff -rupN hydrogen-1.2.5.old/src/core/Lash/LashClient.cpp hydrogen-1.2.5/src/core/Lash/LashClient.cpp
+--- hydrogen-1.2.5.old/src/core/Lash/LashClient.cpp	2025-07-17 22:16:40.000000000 +0200
++++ hydrogen-1.2.5/src/core/Lash/LashClient.cpp	2025-07-29 16:21:08.011044731 +0200
+@@ -30,7 +30,7 @@
+ 
+ #if defined(H2CORE_HAVE_LASH) || _DOXYGEN_
+ 
+-#include <lash/lash.h>
++#include <lash-1.0/lash/lash.h>
+ #include <core/Preferences/Preferences.h>
+ #include <core/H2Exception.h>
+ 
+diff -rupN hydrogen-1.2.5.old/src/core/Lash/LashClient.h hydrogen-1.2.5/src/core/Lash/LashClient.h
+--- hydrogen-1.2.5.old/src/core/Lash/LashClient.h	2025-07-17 22:16:40.000000000 +0200
++++ hydrogen-1.2.5/src/core/Lash/LashClient.h	2025-07-29 16:20:46.198583264 +0200
+@@ -27,7 +27,7 @@
+ #ifndef LASH_CLIENT
+ #define LASH_CLIENT
+ 
+-#include <lash/lash.h>
++#include <lash-1.0/lash/lash.h>
+ 
+ #include <string>
+ #include <cassert>
+diff -rupN hydrogen-1.2.5.old/src/gui/src/MainForm.cpp hydrogen-1.2.5/src/gui/src/MainForm.cpp
+--- hydrogen-1.2.5.old/src/gui/src/MainForm.cpp	2025-07-17 22:16:40.000000000 +0200
++++ hydrogen-1.2.5/src/gui/src/MainForm.cpp	2025-07-29 16:21:36.799973014 +0200
+@@ -77,7 +77,7 @@
+ #endif
+ 
+ #ifdef H2CORE_HAVE_LASH
+-#include <lash/lash.h>
++#include <lash-1.0/lash/lash.h>
+ #include <core/Lash/LashClient.h>
+ #endif
+ 
